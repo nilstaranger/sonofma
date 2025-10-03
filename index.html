@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Son of Ma | Official Website</title>
+    <meta name="description" content="Official website for the electronic music artist Son of Ma. Explore music, videos, and more.">
+    <meta name="keywords" content="Son of Ma, EDM, Trance, Electronic Music, DJ, Producer">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.postimg.cc/yD5CsHWY/Son-of-Ma-EP-web.jpg" type="image/x-icon">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Son of Ma | Official Website">
+    <meta property="og:description" content="Weaving ethereal trance and hypnotic beats, Son of Ma crafts euphoric anthems for a global awakening.">
+    <meta property="og:image" content="https://i.postimg.cc/bZMfphdr/son-of-ma-bio-pic.jpg">
+    <meta property="og:url" content="https://sonofma.github.io"> <!-- Replace with your actual GitHub pages URL -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #E0E0E0;
+            background-image: radial-gradient(circle at 25% 25%, rgba(56, 189, 248, 0.1) 0%, rgba(56, 189, 248, 0) 25%),
+                              radial-gradient(circle at 75% 75%, rgba(192, 132, 252, 0.1) 0%, rgba(192, 132, 252, 0) 25%);
+        }
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(192, 132, 252, 0.6), 0 0 10px rgba(56, 189, 248, 0.6);
+        }
+        .card-bg {
+             background-color: rgba(17, 24, 39, 0.6);
+             backdrop-filter: blur(10px);
+             -webkit-backdrop-filter: blur(10px);
+             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-orbitron text-2xl font-bold tracking-widest uppercase text-white text-glow">Son of Ma</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                <a href="#music" class="text-gray-300 hover:text-white transition-colors duration-300">Music</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Connect</a>
+            </div>
+             <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-40">
+        <div class="flex flex-col items-center justify-center h-full">
+            <a href="#about" class="mobile-menu-link text-2xl text-gray-300 hover:text-white py-4">About</a>
+            <a href="#music" class="mobile-menu-link text-2xl text-gray-300 hover:text-white py-4">Music</a>
+            <a href="#contact" class="mobile-menu-link text-2xl text-gray-300 hover:text-white py-4">Connect</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen flex items-center justify-center text-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to top, #000000, rgba(0,0,0,0.4)), url('https://i.postimg.cc/1tv19DVS/son-of-ma-bio-pic-1920.jpg');">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-wider text-glow">
+                Son of Ma
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-300">Euphoric Anthems for a Global Awakening</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-12 md:py-24 space-y-24 md:space-y-32">
+        
+        <!-- About Section -->
+        <section id="about">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 md:items-start items-center">
+                <div class="md:col-span-2">
+                    <img src="https://i.postimg.cc/yD5CsHWY/Son-of-Ma-EP-web.jpg" 
+                         alt="Son of Ma EP Cover" 
+                         class="rounded-lg shadow-2xl shadow-purple-500/20 w-full transform hover:scale-105 transition-transform duration-500"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x600/000000/FFFFFF?text=EP+Cover';">
+                </div>
+                <div class="md:col-span-3">
+                    <h2 class="font-orbitron text-3xl md:text-4xl font-bold text-white mb-6 text-glow">Music is an act of devotion.</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Music is an act of devotion for electronic artist Son of Ma. His songs began after a profound journey through shame into the embrace of self-love, becoming a testament to the cosmic mother who guided him home. Weaving ethereal trance and hypnotic beats around sacred lyrics, he crafts euphoric anthems for a global awakening. Son of Ma's music is a powerful transmission, reminding every soul of its destiny to rise and bloom in the light of unconditional love.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music">
+            <h2 class="font-orbitron text-4xl md:text-5xl font-bold text-center text-white mb-12 text-glow">Listen</h2>
+            <div class="card-bg rounded-lg p-4 md:p-8 shadow-xl">
+                 <!-- SoundCloud Embed -->
+                 <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sonofma&color=%238c3cff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Contact / Footer -->
+    <footer id="contact" class="bg-gray-900/50 mt-16">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h2 class="font-orbitron text-3xl md:text-4xl font-bold text-white mb-8 text-glow">Connect with Son of Ma</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@SonofMa" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transform hover:-translate-y-1 transition-all duration-300">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" /></svg>
+                </a>
+                <!-- SoundCloud -->
+                <a href="https://soundcloud.com/sonofma" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transform hover:-translate-y-1 transition-all duration-300">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17.939h2.448c.2 0 .344-.144.344-.344V6.405c0-.2-.144-.344-.344-.344H7c-1.657 0-3 1.343-3 3v5.88c0 1.656 1.343 3 3 3zM17 6.061H9.448c-.2 0-.344.144-.344.344v11.188c0 .2.144.344.344.344H12c.98 0 1.833-.61 2.21-1.504l1.233-2.922c.288-.68.96-1.12 1.701-1.12h.023c1.657 0 3-1.343 3-3V9.06c0-1.656-1.343-3-3-3z"/></svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:mason@sonofma.com" class="text-gray-400 hover:text-white transform hover:-translate-y-1 transition-all duration-300">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75C0 3.784.784 3 1.75 3ZM1.5 4.75v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Zm20.584 1.432-9.646 6.32a1.25 1.25 0 0 1-1.476 0l-9.646-6.32A.75.75 0 0 1 2.25 5.5h19.5a.75.75 0 0 1 .584.782Z"/></svg>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; <span id="year"></span> Son of Ma. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Header background on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
