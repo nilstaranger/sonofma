@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Son of Ma - Official Website</title>
+    <!-- SEO Description -->
+    <meta name="description" content="Official website for Son of Ma. Discover euphoric trance anthems for a global awakening, bridging uplifting music with a message of spiritual connection.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,8 +51,9 @@
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+                    <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Open Menu</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-8 6h8"></path></svg>
+                    <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Close Menu</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
         </div>
@@ -69,7 +72,7 @@
             <h1 class="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-wider text-glow">
                 Son of Ma
             </h1>
-            <p class="mt-6 text-xl md:text-2xl lg:text-3xl text-gray-300">Euphoric Anthems for a Global Awakening</p>
+            <p class="mt-6 text-xl md:text-2xl lg:text-3xl text-gray-300">Anthems for Awakening</p>
         </div>
     </section>
 
@@ -84,7 +87,7 @@
                          class="rounded-lg shadow-2xl shadow-cyan-500/10 w-full">
                 </div>
                 <div class="md:col-span-3">
-                    <h2 class="font-orbitron text-3xl md:text-4xl font-bold text-white mb-6 text-glow">Music is an Act of Devotion</h2>
+                    <h2 class="font-orbitron text-3xl md:text-4xl font-bold text-white mb-6 text-glow">A Euphoric Transmission</h2>
                     <p class="text-gray-300 leading-relaxed">
                         Son of Ma emerges with a sound that brings a new depth to the dancefloor, bridging uplifting trance with a message of spiritual awakening. Born from a profound journey through shame into the embrace of self-love, his music is a testament to the Cosmic Mother who guided him home. Weaving ethereal trance and hypnotic beats around sacred lyrics, he crafts powerful anthems for a global awakening. The result is a euphoric transmission for the dancefloor - a space for cathartic release and profound revelation, where every drop feels like a homecoming.
                     </p>
@@ -107,28 +110,39 @@
         <div class="container mx-auto px-6 py-12 text-center">
             <h2 class="font-orbitron text-3xl md:text-4xl font-bold text-white mb-8 text-glow">Connect with Son of Ma</h2>
             <div class="flex justify-center space-x-6 mb-8">
-                <!-- ** SOUNDCLOUD ICON ** -->
-                <a href="https://soundcloud.com/sonofma" target="_blank" class="transition-opacity hover:opacity-75">
+                <!-- Social Icons with Accessibility improvements -->
+                <a href="https://soundcloud.com/sonofma" target="_blank" rel="noopener noreferrer" aria-label="Visit Son of Ma on SoundCloud" class="transition-opacity hover:opacity-75">
                      <img src="https://cdn.prod.website-files.com/62a0a0168756b795debc65bc/6862469207e5d6b29127bc31_791ac3ab0dddebdbe93c67a87e9cdd28_cloudmark-white-transparent.png" alt="SoundCloud" class="w-8 h-8">
                 </a>
-                <!-- ** YOUTUBE AND EMAIL ICONS ** -->
-                <a href="https://www.youtube.com/@SonofMa" target="_blank" class="text-white hover:text-cyan-300 transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 01-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 01-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 011.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.75 15.5V8.5l6.5 3.5-6.5 3.5z" clip-rule="evenodd" /></svg>
+                <a href="https://www.youtube.com/@SonofMa" target="_blank" rel="noopener noreferrer" aria-label="Visit Son of Ma on YouTube" class="text-white hover:text-cyan-300 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><title>YouTube</title><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 01-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 01-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 011.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.75 15.5V8.5l6.5 3.5-6.5 3.5z" clip-rule="evenodd" /></svg>
                 </a>
-                <a href="mailto:mason@sonofma.com" target="_blank" class="text-white hover:text-cyan-300 transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" /><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" /></svg>
+                <a href="https://open.spotify.com/artist/3kTRLun8cPz2ozNQhW9K5O" target="_blank" rel="noopener noreferrer" aria-label="Listen to Son of Ma on Spotify" class="text-white hover:text-cyan-300 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><title>Spotify</title><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.583 14.236a.75.75 0 01-1.06 0c-1.898-1.158-4.28-1.42-7.108-.78a.75.75 0 01-.106-1.492c3.12-.696 5.792-.378 7.978.96a.75.75 0 010 1.06zm.921-2.214a.75.75 0 01-1.03.21c-2.22-1.35-5.385-1.74-7.94-.954a.75.75 0 11-.274-1.465c2.88-.867 6.36.096 8.89 1.62a.75.75 0 01-.21 1.03zm.23-2.428c-2.52-1.54-6.69-1.782-9.1-.975a.75.75 0 11-.38-1.45c2.75-.892 7.28-.6 10.15 1.125a.75.75 0 11-.67 1.3z"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/asonofma" target="_blank" rel="noopener noreferrer" aria-label="Visit Son of Ma on Instagram" class="text-white hover:text-cyan-300 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><title>Instagram</title><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.111 0-3.485.011-4.71.066-2.61.119-3.778 1.282-3.896 3.896-.055 1.225-.066 1.599-.066 4.71s.011 3.485.066 4.71c.119 2.613 1.285 3.778 3.897 3.896 1.225.056 1.6.066 4.71.066s3.485-.011 4.71-.066c2.613-.119 3.778-1.282 3.896-3.896.056-1.225.066-1.599.066-4.71s-.011-3.485-.066-4.71c-.119-2.614-1.282-3.778-3.896-3.897-1.225-.055-1.599-.066-4.71-.066zm0 2.882c-1.953 0-3.521 1.568-3.521 3.521s1.568 3.521 3.521 3.521 3.521-1.568 3.521-3.521-1.568-3.521-3.521-3.521zm0 5.602c-1.151 0-2.081-.93-2.081-2.081s.93-2.081 2.081-2.081 2.081.93 2.081 2.081-.93 2.081-2.081 2.081zm4.965-5.223c-.783 0-1.419-.636-1.419-1.419s.636-1.419 1.419-1.419 1.419.636 1.419 1.419-.636 1.419-1.419 1.419z"/></svg>
+                </a>
+                <a href="mailto:mason@sonofma.com" target="_blank" rel="noopener noreferrer" aria-label="Email Son of Ma" class="text-white hover:text-cyan-300 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><title>Email</title><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" /><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" /></svg>
                 </a>
             </div>
             <p class="text-gray-500 text-sm">&copy; 2025 Son of Ma. All Rights Reserved.</p>
         </div>
     </footer>
     <script>
-        // JavaScript for mobile menu toggle
+        // JavaScript for mobile menu toggle with icon change
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+            const isExpanded = !mobileMenu.classList.contains('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
         });
 
         // Close mobile menu when a link is clicked
@@ -136,6 +150,9 @@
         for (let link of mobileMenuLinks) {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         }
         
@@ -163,4 +180,3 @@
     </script>
 </body>
 </html>
-
