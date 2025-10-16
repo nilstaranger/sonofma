@@ -41,7 +41,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100%; /* Fallback height, overridden by JS on mobile */
             z-index: -10; /* Keep it behind all content */
             background-image: url('https://raw.githubusercontent.com/nilstaranger/sonofma/main/sonofma%20bio%20pic%20web.jpg');
             background-size: cover;
@@ -157,6 +157,28 @@
         </div>
     </footer>
     <script>
+        // --- MOBILE VIEWPORT FIX ---
+        // Function to fix the mobile viewport height jump (especially on iOS)
+        function setFixedBackgroundHeight() {
+            const vh = window.innerHeight;
+            const fixedBackground = document.getElementById('fixed-background');
+            if (fixedBackground) {
+                // Setting height in pixels prevents the jump that occurs when the mobile address bar hides/shows
+                fixedBackground.style.height = `${vh}px`;
+            }
+        }
+
+        // Initial call to set the correct height
+        setFixedBackgroundHeight();
+
+        // Throttle the resize event to prevent performance issues
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(setFixedBackgroundHeight, 100);
+        });
+        // --- END MOBILE VIEWPORT FIX ---
+
         // JavaScript for mobile menu toggle with icon change
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -199,7 +221,6 @@
             link.addEventListener('click', function(event) {
                 // Prevent the default browser action
                 event.preventDefault();
-                // Explicitly open the link in a new tab
                 window.open(this.href, '_blank');
             });
         });
