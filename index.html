@@ -165,19 +165,24 @@
         </div>
     </footer>
     <script>
-        // --- MOBILE VIEWPORT FIX: The standard iOS 100vh Fix ---
-        // This calculates the correct viewport height (1% of innerHeight) and sets a CSS variable (--vh)
-        // on the root element. This variable is then used in CSS to define fixed heights, preventing 
-        // the viewport jump that occurs when the mobile address bar hides/shows.
+        // --- MOBILE VIEWPORT FIX: The standard iOS 100vh Fix (Aggressive Timing) ---
+        // This technique calculates the true viewport height and uses a CSS variable (--vh) 
+        // to set the height of fixed elements, overriding the faulty iOS 100vh calculation.
         function setTrueVh() {
+            // Calculate 1% of the viewport height (window.innerHeight)
             const vh = window.innerHeight * 0.01;
+            // Set the CSS Custom Property on the root element
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         }
 
-        // Initial call to set the correct height variable
+        // 1. Initial immediate call (runs as soon as the script is parsed)
         setTrueVh();
 
-        // Re-calculate the variable on resize (covers orientation change and desktop resize)
+        // 2. Delayed call (Catches potential address bar instability after initial render)
+        // This is often the key to fixing the most stubborn iOS timing issues.
+        setTimeout(setTrueVh, 50); 
+
+        // 3. Re-calculate on resize/orientation change (with debounce)
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
@@ -220,15 +225,6 @@
                 mainNav.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
                 mainNav.classList.add('bg-transparent');
             }
-        });
-
-        // Force external links to open in a new tab to bypass potential iframe restrictions
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.addEventListener('click', function(event) {
-                // Prevent the default browser action
-                event.preventDefault();
-                window.open(this.href, '_blank');
-            });
         });
 
         // JavaScript for section fade-in effect using Intersection Observer
