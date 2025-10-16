@@ -17,43 +17,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Custom Styles */
+        /* --- DEFINITIVE FIX FOR IOS SCROLL JUMP APPLIED HERE --- */
+        /* By applying the background to the body and setting background-attachment: fixed, */
+        /* we tell the browser to render the image once, regardless of scrolling, */
+        /* which bypasses the dynamic viewport recalculation issue. */
         body {
             background-color: #000000;
-            color: #E5E7EB; /* Lighter gray for better readability */
+            color: #E5E7EB; 
             font-family: 'Inter', sans-serif;
-        }
-        .font-orbitron {
-            font-family: 'Orbitron', sans-serif;
-        }
-        /* Custom text glow effect - now applied to both Hero texts */
-        .text-glow {
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 20px rgba(103, 232, 249, 0.3);
-        }
-        /* Custom transition for nav background */
-        #main-nav {
-            transition: background-color 0.3s ease-in-out;
-        }
-        
-        /* New CSS for Fixed Parallax Background - USES --vh VARIABLE */
-        #fixed-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            /* Fix iOS viewport jump: 100% of the calculated viewport height */
-            height: calc(var(--vh, 1vh) * 100); 
-            z-index: -10; /* Keep it behind all content */
+            
+            /* Background properties moved from #fixed-background */
             background-image: url('https://raw.githubusercontent.com/nilstaranger/sonofma/main/sonofma%20bio%20pic%20web.jpg');
             background-size: cover;
             background-position: center top;
             background-repeat: no-repeat;
+            
+            /* THE KEY FIX: This ensures the background stays fixed relative to the viewport, */
+            /* and is independent of the visual viewport's height changes. */
+            background-attachment: fixed;
+            
+            /* Set min-height to allow full content scrolling */
+            min-height: 100vh;
         }
 
-        /* Hero Section Height Fix - USES --vh VARIABLE */
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        /* Custom text glow effect */
+        .text-glow {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 20px rgba(103, 232, 249, 0.3);
+        }
+        
+        /* Custom transition for nav background */
+        #main-nav {
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Hero section uses h-screen for initial view (now safe, as background is fixed on body) */
         #hero {
-             /* Fix iOS viewport jump for the visible hero area */
-            height: calc(var(--vh, 1vh) * 100);
+            height: 100vh; 
         }
 
         /* Custom backdrop blur for main content area */
@@ -65,7 +68,7 @@
         /* New: Fade-in animation for main content and footer */
         .fade-in-section {
             opacity: 0;
-            transition: opacity 1.5s ease-out; /* Controls the speed of the fade */
+            transition: opacity 1.5s ease-out; 
         }
         .is-visible {
             opacity: 1;
@@ -74,8 +77,7 @@
 </head>
 <body class="bg-black">
     
-    <!-- Fixed Background Layer for Parallax Effect -->
-    <div id="fixed-background"></div>
+    <!-- NOTE: The separate #fixed-background div was removed. The background is now on the body. -->
 
     <!-- Header -->
     <header id="main-nav" class="fixed w-full top-0 z-50 bg-transparent">
@@ -83,7 +85,7 @@
             <div class="flex justify-between items-center">
                 <a href="#hero" class="font-orbitron text-xl font-bold text-white text-glow">Son of Ma</a>
                 
-                <!-- Desktop Nav - Links changed to text-white -->
+                <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="#about" class="text-white hover:text-cyan-300 transition-colors">About</a>
                     <a href="#contact" class="text-white hover:text-cyan-300 transition-colors">Connect</a>
@@ -115,7 +117,7 @@
         </div>
     </section>
 
-    <!-- Main Content - Added ID and fade-in class -->
+    <!-- Main Content - The content is layered on top of the fixed background -->
     <main id="main-content" class="container mx-auto px-6 py-6 md:py-12 space-y-24 md:space-y-32 bg-black/70 backdrop-blur-md relative z-0 rounded-t-xl shadow-2xl shadow-cyan-500/10 fade-in-section">
         
         <!-- About Section -->
@@ -165,30 +167,7 @@
         </div>
     </footer>
     <script>
-        // --- MOBILE VIEWPORT FIX: The standard iOS 100vh Fix (Aggressive Timing) ---
-        // This technique calculates the true viewport height and uses a CSS variable (--vh) 
-        // to set the height of fixed elements, overriding the faulty iOS 100vh calculation.
-        function setTrueVh() {
-            // Calculate 1% of the viewport height (window.innerHeight)
-            const vh = window.innerHeight * 0.01;
-            // Set the CSS Custom Property on the root element
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-
-        // 1. Initial immediate call (runs as soon as the script is parsed)
-        setTrueVh();
-
-        // 2. Delayed call (Catches potential address bar instability after initial render)
-        // This is often the key to fixing the most stubborn iOS timing issues.
-        setTimeout(setTrueVh, 50); 
-
-        // 3. Re-calculate on resize/orientation change (with debounce)
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(setTrueVh, 100);
-        });
-        // --- END MOBILE VIEWPORT FIX ---
+        // No more complex viewport calculation needed!
 
         // JavaScript for mobile menu toggle with icon change
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
